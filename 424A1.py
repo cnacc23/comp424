@@ -79,6 +79,7 @@ def goal_path(curr):
     
     while curr:
         path.append(curr.state)
+        #traceback to the parent state 
         curr = curr.parent
     
 
@@ -111,7 +112,6 @@ def bfs(root):
         #check goal state 
         if goal_tuple == curr_tuple:
             #print out goal path
-            print("here")
             goal_path(curr)
             return 
             
@@ -178,8 +178,6 @@ def dfs(node):
         
        
         for tile in range(len(sorted_moves)):
-            
-            print("current tile: ", sorted_moves[tile] )
             
             #make a deep copy of the current state 
             new_state = [row[:] for row in curr.state]
